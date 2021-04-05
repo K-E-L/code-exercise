@@ -2,7 +2,23 @@ $(document).ready(init());
 
 function init() {
     var limit = 12;
+    setBanner();
     getDogs(limit);
+}
+
+function setBanner() {
+    $.ajax({
+        url: 'https://dog.ceo/api/breeds/image/random',
+        success: function(result) {
+            if (result.status == 'success') {
+                let dog_pic = document.createElement("img");
+                dog_pic.src = result.message
+                dog_pic.alt = "Pupper";
+                dog_pic.classList.add('section-bg', 'opacity-25', 'object-fit');
+                $('.banner').prepend(dog_pic);
+            }
+        }
+    });
 }
 
 function getDogs(limit) {
