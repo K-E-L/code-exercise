@@ -55,12 +55,6 @@ function buildProfiles(images) {
     cleanUp();
 }
 
-function addRemoveProfileEvent() {
-    document.getElementById("").addEventListener("click", function() {
-        document.getElementById("demo").innerHTML = "Hello World";
-    });
-}
-
 function cleanUp() {
     $('.dog-profile:first()').remove();
     $('.dog-profile').show();
